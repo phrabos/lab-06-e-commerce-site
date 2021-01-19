@@ -1,0 +1,15 @@
+body {
+    background-color: aquamarine;
+}
+.tea-item {
+    border: solid 1px black;
+    text-align: center;
+}
+.tea-price {
+    font-weight: 900;
+}
+.tea-image {
+    width: 100px;
+    height: 100px;
+
+}
