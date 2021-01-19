@@ -14,22 +14,7 @@ test('should take in a tea and return a li', (expect) => {
     };
     //Arrange
     // Set up your arguments and expectations
-    const expected = `<li class="tea-item">
-                    <h3 class="tea-name">
-                        Ali Shan
-                    </h3>
-                    <img src="../assets/alishan.jpg" class="tea-image">
-                    <p class="tea-category">
-                        Taiwanese Oolong
-                    </p>
-                    <p>
-                        floral lightly oxidized from Ali Mountain in Taiwan
-                    </p>
-                    <p class="tea-price">
-                        $35.00
-                    </p>
-                    <button>Add to Cart</button>
-                </li>`;
+    const expected = `<li class="tea-item"><h3 class="tea-name">Ali Shan</h3><img src="../assets/alishan.jpg" class="tea-image"><p class="tea-category">Taiwanese Oolong</p><p class="tea-description">floral lightly oxidized from Ali Mountain in Taiwan</p><p class="tea-price">$35.00</p><button>Add to Cart</button></li>`;
     
     //Act 
     // Call the function you're testing and set the result to a const
