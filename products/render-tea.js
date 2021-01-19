@@ -29,7 +29,8 @@ export function renderTea(tea){
 
     const button = document.createElement('button');
     button.textContent = 'Add to Cart';
+    button.value = tea.id;
     li.append(button);
 
     return li;
-};
+}
