@@ -1,6 +1,6 @@
 // IMPORT MODULES under test here:
 import { renderTea } from '../products/render-tea.js';
-import { findByID } from '../utils.js';
+import { findByID, calcItemTotal } from '../utils.js';
 
 const test = QUnit.test;
 const testArray = [
@@ -27,6 +27,24 @@ const testArray = [
         description: 'fruity and floral Phoenix single-bush',
         category: 'Dancong',
         price: 40,
+    },
+];
+const testCart = [
+    {
+        id: 3,
+        quantity: 4,
+    },
+    {
+        id: 2,
+        quantity: 1,
+    },
+    {
+        id: 6,
+        quantity: 2,
+    },
+    {
+        id: 9,
+        quantity: 3,
     },
 ];
 test('should take in a tea and return a li', (expect) => {
@@ -61,4 +79,17 @@ test('should take in an id and array and return an object', (expect) => {
     //Expect
     // Make assertions about what is expected versus the actual result
     expect.deepEqual(actual, expected);
+});
+test('should take in a cart item and a tea item and return total price', (expect) => {
+    //Arrange
+    // Set up your arguments and expectations
+    const expected = 160;
+    
+    //Act 
+    // Call the function you're testing and set the result to a const
+    const actual = calcItemTotal(testCart[0], testArray[2]);
+
+    //Expect
+    // Make assertions about what is expected versus the actual result
+    expect.equal(actual, expected);
 });

@@ -6,3 +6,7 @@ export function findByID(id, array){
     }
     return null;
 }
+export function calcItemTotal(cartItem, teaItem){
+    const total = cartItem.quantity * teaItem.price;
+    return total;
+}
