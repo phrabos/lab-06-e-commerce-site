@@ -1,6 +1,6 @@
 // IMPORT MODULES under test here:
 import { renderTea } from '../products/render-tea.js';
-import { oolongTeas } from '../products/data.js';
+import { teasArray } from '../products/data.js';
 
 const test = QUnit.test;
 
@@ -11,7 +11,7 @@ test('should take in a tea and return a li', (expect) => {
     
     //Act 
     // Call the function you're testing and set the result to a const
-    const actual = renderTea(oolongTeas[1]);
+    const actual = renderTea(teasArray[1]);
 
     //Expect
     // Make assertions about what is expected versus the actual result

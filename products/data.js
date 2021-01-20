@@ -1,4 +1,4 @@
-export const oolongTeas = [
+export const teasArray = [
     {
         id: 1, 
         name: 'Da Hong Pao',
@@ -54,6 +54,22 @@ export const oolongTeas = [
         description: 'roasted grain followed by verdant notes',
         category: 'Rolled Oolong',
         price: 27,
+    },
+    {
+        id: 8, 
+        name: 'Jingmai Gushu',
+        image: 'puerh.jpg',
+        description: 'mellow, vegetal base, matcha',
+        category: 'Pu\'erh',
+        price: 20,
+    },
+    {
+        id: 9, 
+        name: 'Bingdao',
+        image: 'bingdao.jpg',
+        description: 'strawberry, bamboo shoots, beeswax',
+        category: 'Pu\'erh',
+        price: 40,
     },
 
 ];
