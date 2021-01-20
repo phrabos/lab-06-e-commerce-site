@@ -83,7 +83,7 @@ test('should take in an id and array and return an object', (expect) => {
 test('should take in a cart item and a tea item and return total price', (expect) => {
     //Arrange
     // Set up your arguments and expectations
-    const expected = 160;
+    const expected = '$160.00';
     
     //Act 
     // Call the function you're testing and set the result to a const
