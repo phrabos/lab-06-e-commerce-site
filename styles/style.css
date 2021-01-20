@@ -34,7 +34,7 @@ footer {
     display: flex;
     justify-content: flex-end;
 }
-a {
+nav a {
     font-size: 1.5rem;
     font-weight: bold;
     margin-left: 10px;
