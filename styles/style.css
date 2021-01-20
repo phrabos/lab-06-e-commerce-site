@@ -4,6 +4,10 @@ body {
 
 }
 header {
+    width: 100%;
+    
+}
+.header-logo {
     display: flex;
     justify-content: center;
     height: fit-content;
@@ -29,4 +33,9 @@ footer {
     width: 100%;
     display: flex;
     justify-content: flex-end;
+}
+a {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-right: 10px;
 }
