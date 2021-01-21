@@ -35,3 +35,38 @@ button {
     font-size: 25px;
     margin-top: 40px;
 }
+/* Designing dialog box */
+#container { 
+    display: none; 
+    background-color: rgb(238, 238, 238); 
+    color: black; 
+    position: absolute; 
+    width: 300px; 
+    border-radius: 5px; 
+    left: 50%; 
+    top: 25%;
+    margin-left: -160px; 
+    padding: 16px 8px 8px; 
+    box-sizing: border-box; 
+    border: 1px solid black;
+ } 
+   
+ /* Designing dialog box's okay buttun */
+ #container button { 
+    background-color: rgb(206, 255, 255); 
+    display: inline-block; 
+    border-radius: 5px; 
+    border: 2px solid gray; 
+    padding: 5px; 
+    text-align: center; 
+    width: 100%; 
+ } 
+   
+ /* Dialog box message decorating */
+ #container .message { 
+    text-align: center; 
+    justify-content: center;
+    padding: 10px 30px;
+    font-size: 30px;
+    font-weight: bold;
+ }

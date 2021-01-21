@@ -6,8 +6,23 @@ const table = document.getElementById('cart-table');
 const orderTotal = calcOrderTotal(cart, teasArray);
 const orderButton = document.getElementById('order-button');
 
+function popup(msg, gfg) { 
+    // eslint-disable-next-line no-undef
+    const confirmBox = $('#container'); 
+      
+    /* Trace message to display */
+    confirmBox.find('.message').text(msg); 
+      
+    /* Calling function */
+    confirmBox.find('.yes').unbind().click(function()  
+    { 
+        confirmBox.hide(); 
+    }); 
+    confirmBox.find('.yes').click(gfg); 
+    confirmBox.show();
+}
 orderButton.addEventListener('click', () => {
-    alert('Thank you, your order has been placed!');
+    popup();
 });
 
 for (const iterator of cart) {

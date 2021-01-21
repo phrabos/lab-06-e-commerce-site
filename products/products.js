@@ -10,7 +10,6 @@ for (const tea of teasArray) {
 const buttonsArray = document.querySelectorAll('button');
 
 for (const iterator of buttonsArray) {
-    console.log(iterator.value);
     iterator.addEventListener('click', () => {
         alert(iterator.value);
     });
