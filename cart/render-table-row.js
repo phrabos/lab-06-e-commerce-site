@@ -21,7 +21,7 @@ export function renderTableRow(cartItem, teaItem) {
 
     const tdSubTotal = document.createElement('td');
     const subTotal = calcItemTotal(cartItem, teaItem);
-    tdSubTotal.textContent = subTotal;
+    tdSubTotal.textContent = `$${subTotal.toFixed(2)}`;
     tableRow.append(tdSubTotal);
 
     

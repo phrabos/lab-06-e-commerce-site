@@ -15,5 +15,5 @@ export function calcOrderTotal(cartArray, productArray){
         let subTotal = calcItemTotal(iterator, teaObject);
         total = total + subTotal;
     }
-    return `$${total.toFixed(2)}`;
+    return `Order Total: $${total.toFixed(2)}`;
 }
