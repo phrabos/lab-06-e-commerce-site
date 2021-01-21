@@ -1,6 +1,6 @@
 // IMPORT MODULES under test here:
 import { renderTea } from '../products/render-tea.js';
-import { findByID, calcItemTotal } from '../utils.js';
+import { findByID, calcItemTotal, calcOrderTotal } from '../utils.js';
 import { renderTableRow } from '../cart/render-table-row.js';
 
 const test = QUnit.test;
@@ -48,10 +48,6 @@ const testCart = [
         quantity: 1,
     },
     {
-        id: 6,
-        quantity: 2,
-    },
-    {
         id: 9,
         quantity: 3,
     },
@@ -92,7 +88,7 @@ test('should take in an id and array and return an object', (expect) => {
 test('should take in a cart item and a tea item and return total price', (expect) => {
     //Arrange
     // Set up your arguments and expectations
-    const expected = '$160.00';
+    const expected = 160.00;
     
     //Act 
     // Call the function you're testing and set the result to a const
@@ -105,13 +101,26 @@ test('should take in a cart item and a tea item and return total price', (expect
 test('should take in a cart item and a teaArrays item and return a table row element', (expect) => {
     //Arrange
     // Set up your arguments and expectations
-    const expected = `<tr><td>3</td><td>Bingdao</td><td>$40.00</td><td>$120.00</td></tr>`;
+    const expected = `<tr><td>3</td><td>Bingdao</td><td>$40.00</td><td>120</td></tr>`;
     
     //Act 
     // Call the function you're testing and set the result to a const
-    const actual = renderTableRow(testCart[3], testArray[3]);
+    const actual = renderTableRow(testCart[2], testArray[3]);
 
     //Expect
     // Make assertions about what is expected versus the actual result
     expect.equal(actual.outerHTML, expected);
+});
+test('should take in a cart item and a tea item and return total price', (expect) => {
+    //Arrange
+    // Set up your arguments and expectations
+    const expected = '$315.00';
+    
+    //Act 
+    // Call the function you're testing and set the result to a const
+    const actual = calcOrderTotal(testCart, testArray);
+
+    //Expect
+    // Make assertions about what is expected versus the actual result
+    expect.equal(actual, expected);
 });
