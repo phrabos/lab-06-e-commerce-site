@@ -1,6 +1,7 @@
 // IMPORT MODULES under test here:
 import { renderTea } from '../products/render-tea.js';
 import { findByID, calcItemTotal } from '../utils.js';
+import { renderTableRow } from '../cart/render-table-row.js';
 
 const test = QUnit.test;
 const testArray = [
@@ -26,6 +27,14 @@ const testArray = [
         image: 'gardenia.jpg',
         description: 'fruity and floral Phoenix single-bush',
         category: 'Dancong',
+        price: 40,
+    },
+    {
+        id: 9, 
+        name: 'Bingdao',
+        image: 'bingdao.jpg',
+        description: 'strawberry, bamboo shoots, beeswax',
+        category: 'Pu\'erh',
         price: 40,
     },
 ];
@@ -92,4 +101,17 @@ test('should take in a cart item and a tea item and return total price', (expect
     //Expect
     // Make assertions about what is expected versus the actual result
     expect.equal(actual, expected);
+});
+test('should take in a cart item and a teaArrays item and return a table row element', (expect) => {
+    //Arrange
+    // Set up your arguments and expectations
+    const expected = `<tr><td>3</td><td>Bingdao</td><td>$40.00</td><td>$120.00</td></tr>`;
+    
+    //Act 
+    // Call the function you're testing and set the result to a const
+    const actual = renderTableRow(testCart[3], testArray[3]);
+
+    //Expect
+    // Make assertions about what is expected versus the actual result
+    expect.equal(actual.outerHTML, expected);
 });
