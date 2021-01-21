@@ -114,7 +114,7 @@ test('should take in a cart item and a teaArrays item and return a table row ele
 test('should take in a cart item and a tea item and return total price', (expect) => {
     //Arrange
     // Set up your arguments and expectations
-    const expected = 'Order Total: $315.00';
+    const expected = 315.00;
     
     //Act 
     // Call the function you're testing and set the result to a const
