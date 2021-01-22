@@ -1,6 +1,5 @@
+import { CART } from './constants.js';
 import { findByID } from './utils.js';
-
-const CART = 'CART';
 
 export function getCart(){
     const stringCart = localStorage.getItem(CART);

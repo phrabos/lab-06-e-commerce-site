@@ -1,3 +1,6 @@
+import { PRODUCTS } from './constants.js';
+import { teasArray } from './products/data.js';
+
 export function findByID(id, array){
     for (let tea of array) {
         if (tea.id === id) return tea;
@@ -16,4 +19,18 @@ export function calcOrderTotal(cartArray, productArray){
         total = total + subTotal;
     }
     return total.toFixed(2);
+}
+export function getProducts(){
+    const stringProducts = localStorage.getItem(PRODUCTS);
+    if (stringProducts){
+        const parsedProducts = JSON.parse(stringProducts);
+        return parsedProducts;
+    } else {
+        const stringDefaultProducts = JSON.stringify([]);
+        localStorage.setItem(PRODUCTS, stringDefaultProducts);
+    } return teasArray;
+}
+export function setProducts(productsArray){
+    const stringProducts = JSON.stringify(productsArray);
+    localStorage.setItem(PRODUCTS, stringProducts);
 }

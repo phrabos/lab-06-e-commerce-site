@@ -34,14 +34,38 @@
                 <p>
                     This is the admin page. 
                 </p>
-            </h2>  
+            </h2>
+            <div class='form-div'>
+                <form id='add-items-form'class='form'>
+                    <label>
+                        <input type="number" name="id" placeholder="Item ID">
+                    </label>
+                    <label>
+                        <input type="text" name="product-name" placeholder="Product">
+                    </label>                    
+                    <label>
+                        <input type="text" name="image"placeholder="Item image file name">
+                    </label>                    
+                    <label>
+                        <input type="text" name="description" placeholder="Description">
+                    </label>                    
+                    <label>
+                        <input type="text" name="category" placeholder="Category">
+                    </label>                    
+                    <label>
+                        <input type="number" name="price" placeholder="Price">
+                    </label>
+                    <button>Add New Item to Inventory</button>                    
+                </form>
+                
+            </div>    
         </section>
     </main>
         <footer>
             <div class="copy gutter-right">&copy; 2020 Alchemy Code Lab</div>
         </footer>
         
-        <script type="module" src="app.js"></script>
+        <script type="module" src="./admin.js"></script>
 </body>
     
     </html>
