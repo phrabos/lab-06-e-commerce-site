@@ -23,7 +23,7 @@ export function clearCart(){
     localStorage.setItem(CART, stringCart);
 }
 
-export function addItemToCart(id){
+export function addItemToCart(id, quantity){
     const updatedCart = getCart();
     const cartItem = findByID(id, updatedCart);
     if (cartItem) {
@@ -31,7 +31,7 @@ export function addItemToCart(id){
     } else {
         const newItem = {
             id: id,
-            quantity: 1
+            quantity: quantity
         };
         updatedCart.push(newItem);
     }

@@ -34,13 +34,31 @@ export function renderTea(tea){
     pPrice.textContent = `$${tea.price.toFixed(2)}`;
     li.append(pPrice);
 
+    const dropdown = document.createElement('select');
+    let userQuantity = 0;
+    dropdown.innerHTML = `<option>--quantity</option>
+    <option value="1">1</option>
+    <option value="2">2</option>
+    <option value="3">3</option>`;
+    li.append(dropdown);
+
     const button = document.createElement('button');
     button.textContent = 'Add to Cart';
     button.value = tea.id;
     li.append(button);
-    button.addEventListener('click', () => {
-        addItemToCart(tea.id);
+
+
+
+    dropdown.addEventListener('change', (e) =>{
+        userQuantity = e.target.value;
+        console.log(userQuantity);
     });
+
+    button.addEventListener('click', () => {
+        addItemToCart(tea.id, userQuantity);
+
+    });
+
 
     return li;
 }
