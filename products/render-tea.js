@@ -11,6 +11,8 @@ export function renderTea(tea){
 
     const img = document.createElement('img');
     img.src = `../assets/${tea.image}`;
+    img.alt = 'tea-picture';
+    img.onerror = ()=>img.src = '../assets/orange.jpg';
     img.classList.add('tea-image');
     li.append(img);
 

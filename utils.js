@@ -26,7 +26,7 @@ export function getProducts(){
         const parsedProducts = JSON.parse(stringProducts);
         return parsedProducts;
     } else {
-        const stringDefaultProducts = JSON.stringify([]);
+        const stringDefaultProducts = JSON.stringify(teasArray);
         localStorage.setItem(PRODUCTS, stringDefaultProducts);
     } return teasArray;
 }
