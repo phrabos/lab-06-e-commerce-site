@@ -41,7 +41,7 @@ export function renderTea(tea){
     button.value = tea.id;
     li.append(button);
     
-    let userQuantity = 0;
+    let userQuantity = 1;
     dropdown.addEventListener('change', (e) =>{
         userQuantity = e.target.value;
     });
