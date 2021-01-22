@@ -19,7 +19,7 @@ function popup(msg, gfg) {
     confirmBox.find('.yes').unbind().click(function()  
     { 
         confirmBox.hide();
-        location.reload();
+        window.location.href = '../index.html';
     }); 
     confirmBox.find('.yes').click(gfg); 
     confirmBox.show();
