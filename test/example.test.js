@@ -2,6 +2,7 @@
 import { renderTea } from '../products/render-tea.js';
 import { findByID, calcItemTotal, calcOrderTotal } from '../utils.js';
 import { renderTableRow } from '../cart/render-table-row.js';
+import { clearCart, getCart, setCart } from '../cart-utils.js';
 
 const test = QUnit.test;
 const testArray = [
@@ -55,7 +56,10 @@ const testCart = [
 test('should take in a tea and return a li', (expect) => {
     //Arrange
     // Set up your arguments and expectations
-    const expected = `<li class="tea-item"><h3 class="tea-name">Ali Shan</h3><img src="../assets/alishan.jpg" class="tea-image"><p class="tea-category">Taiwanese Oolong</p><p class="tea-description">floral lightly oxidized from Ali Mountain</p><p class="tea-price">$35.00</p><button value="2">Add to Cart</button></li>`;
+    const expected = `<li class="tea-item"><h3 class="tea-name">Ali Shan</h3><img src="../assets/alishan.jpg" class="tea-image"><p class="tea-category">Taiwanese Oolong</p><p class="tea-description">floral lightly oxidized from Ali Mountain</p><p class="tea-price">$35.00</p><select><option>--quantity</option>
+    <option value="1">1</option>
+    <option value="2">2</option>
+    <option value="3">3</option></select><button value="2">Add to Cart</button></li>`;
     
     //Act 
     // Call the function you're testing and set the result to a const
@@ -123,4 +127,62 @@ test('should take in a cart item and a tea item and return total price', (expect
     //Expect
     // Make assertions about what is expected versus the actual result
     expect.equal(actual, expected);
+});
+test('getCart should get the correct cart from local storage', (expect) => {
+    const testCart = [
+        { 
+            id: 3,
+            quantity: 2
+        },
+        { 
+            id: 4,
+            quantity: 1
+        },
+    ];
+    const stringCart = JSON.stringify(testCart);
+
+    localStorage.setItem('CART', stringCart);
+    
+    const cart = getCart();
+
+    expect.deepEqual(cart, testCart);
+});
+test('clearCart should set the local storage to an empty array []', (expect) => {
+    const testCart = [
+        { 
+            id: 3,
+            quantity: 2
+        },
+        { 
+            id: 4,
+            quantity: 1
+        },
+    ];
+
+    const emptyCart = [];
+    const stringCart = JSON.stringify(testCart);
+    localStorage.setItem('CART', stringCart);
+    clearCart();
+    const stringEmptyCart = localStorage.getItem('CART');
+    const cart = JSON.parse(stringEmptyCart);
+    expect.deepEqual(cart, emptyCart);
+});
+test('setCart should convert a cart array to a string and set it to local storage', (expect) => {
+    const testCart = [
+        { 
+            id: 3,
+            quantity: 2
+        },
+        { 
+            id: 4,
+            quantity: 1
+        },
+    ];
+    setCart(testCart);
+
+    const expected = JSON.stringify(testCart);
+    
+    const stringCart = localStorage.getItem('CART');
+
+    expect.deepEqual(stringCart, expected);
 });

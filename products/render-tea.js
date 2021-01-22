@@ -1,10 +1,5 @@
 import { addItemToCart } from '../cart-utils.js';
 
-
-
-
-
-
 export function renderTea(tea){
     const li = document.createElement('li');
     li.classList.add('tea-item');
@@ -35,30 +30,26 @@ export function renderTea(tea){
     li.append(pPrice);
 
     const dropdown = document.createElement('select');
-    let userQuantity = 0;
     dropdown.innerHTML = `<option>--quantity</option>
     <option value="1">1</option>
     <option value="2">2</option>
     <option value="3">3</option>`;
     li.append(dropdown);
-
+    
     const button = document.createElement('button');
     button.textContent = 'Add to Cart';
     button.value = tea.id;
     li.append(button);
-
-
-
+    
+    let userQuantity = 0;
     dropdown.addEventListener('change', (e) =>{
         userQuantity = e.target.value;
-        console.log(userQuantity);
     });
 
     button.addEventListener('click', () => {
         addItemToCart(tea.id, userQuantity);
 
     });
-
 
     return li;
 }
