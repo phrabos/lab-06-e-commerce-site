@@ -1,10 +1,12 @@
 import { renderTableRow } from './render-table-row.js';
-import { cart } from './cart-data.js';
 import { teasArray } from '../products/data.js';
 import { findByID, calcOrderTotal } from '../utils.js';
+import { clearCart, getCart } from '../cart-utils.js';
 const table = document.getElementById('cart-table');
-const orderTotal = calcOrderTotal(cart, teasArray);
 const orderButton = document.getElementById('order-button');
+const message = document.getElementById('message');
+const cart = getCart();
+const orderTotal = calcOrderTotal(cart, teasArray);
 
 function popup(msg, gfg) { 
     // eslint-disable-next-line no-undef
@@ -16,14 +18,18 @@ function popup(msg, gfg) {
     /* Calling function */
     confirmBox.find('.yes').unbind().click(function()  
     { 
-        confirmBox.hide(); 
+        confirmBox.hide();
+        location.reload();
     }); 
     confirmBox.find('.yes').click(gfg); 
     confirmBox.show();
 }
 orderButton.addEventListener('click', () => {
+    message.textContent = 'Thank you, your order of ' + JSON.stringify(cart) + ' has been placed!';
     popup();
+    clearCart();
 });
+
 
 for (const iterator of cart) {
     const teaObject = findByID(iterator.id, teasArray);
