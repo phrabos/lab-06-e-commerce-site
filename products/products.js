@@ -6,11 +6,3 @@ for (const tea of teasArray) {
     const teaElement = renderTea(tea);
     teaList.append(teaElement);
 }
-
-const buttonsArray = document.querySelectorAll('button');
-
-for (const iterator of buttonsArray) {
-    iterator.addEventListener('click', () => {
-        alert(iterator.value);
-    });
-}
