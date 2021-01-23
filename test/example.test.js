@@ -56,7 +56,7 @@ const testCart = [
 test('should take in a tea and return a li', (expect) => {
     //Arrange
     // Set up your arguments and expectations
-    const expected = `<li class="tea-item"><h3 class="tea-name">Ali Shan</h3><img src="../assets/alishan.jpg" class="tea-image"><p class="tea-category">Taiwanese Oolong</p><p class="tea-description">floral lightly oxidized from Ali Mountain</p><p class="tea-price">$35.00</p><select><option>--quantity</option>
+    const expected = `<li class="tea-item"><h3 class="tea-name">Ali Shan</h3><img src="../assets/alishan.jpg" alt="tea-picture" class="tea-image"><p class="tea-category">Taiwanese Oolong</p><p class="tea-description">floral lightly oxidized from Ali Mountain</p><p class="tea-price">$35.00</p><select><option>--quantity</option>
     <option value="1">1</option>
     <option value="2">2</option>
     <option value="3">3</option></select><button value="2">Add to Cart</button></li>`;
