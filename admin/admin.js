@@ -1,4 +1,5 @@
 import { getProducts, setProducts } from '../utils.js';
+import { renderAdminProducts } from './render-admin-products.js';
 
 const formElement = document.getElementById('add-items-form');
 
@@ -24,12 +25,18 @@ formElement.addEventListener('submit', (e) =>{
 
     parsedProducts.push(newTeaItem);
     setProducts(parsedProducts);
+    window.location.reload();
     
 });
 
-// const itemID = Number(itemIdInput.value);
-// const productName = productNameInput.value;
-// const image = imageInput.value;
-// const description = descriptionInput.value;
-// const category = categoryInput.value;
-// const price = Number(priceInput.value);
+
+const teaList = document.getElementById('oolong-list');
+
+getProducts();
+const productsInStorage = getProducts();
+
+
+for (const teaObject of productsInStorage) {
+    const teaElement = renderAdminProducts(teaObject);
+    teaList.append(teaElement);
+}

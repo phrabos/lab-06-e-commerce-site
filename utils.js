@@ -34,3 +34,13 @@ export function setProducts(productsArray){
     const stringProducts = JSON.stringify(productsArray);
     localStorage.setItem(PRODUCTS, stringProducts);
 }
+
+// const productsArray = getProducts();
+export function removeFromProductsList(item, arrayOfProducts){
+    const arrayItem = findByID(item.id, arrayOfProducts);
+    const indexToDelete = arrayOfProducts.indexOf(arrayItem);
+    arrayOfProducts.splice(indexToDelete, 1);
+    setProducts(arrayOfProducts);
+    return arrayOfProducts;
+
+}
