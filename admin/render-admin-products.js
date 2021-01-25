@@ -30,7 +30,7 @@ export function renderAdminProducts(tea){
     button.addEventListener('click', () => {
         
         removeFromProductsList(tea, updatedProductsArray);
-        // window.location.reload();
+        window.location.reload();
         
     });
 

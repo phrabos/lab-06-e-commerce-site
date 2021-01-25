@@ -4,27 +4,7 @@ import { calcItemTotal, findByID } from '../utils.js';
 
 export function renderTableRow(cartItem, teaItem) {
     const tableRow = document.createElement('tr');
-    
-    const tdQuantity = document.createElement('td');
-    let quantity = cartItem.quantity;
-    tdQuantity.textContent = quantity;
-    tableRow.append(tdQuantity);
 
-    const tdName = document.createElement('td');
-    const itemName = teaItem.name;
-    tdName.textContent = itemName;
-    tableRow.append(tdName);
-    
-    const tdPrice = document.createElement('td');
-    const price = teaItem.price;
-    tdPrice.textContent = `$${price.toFixed(2)}`;
-    tableRow.append(tdPrice);
-
-    const tdSubTotal = document.createElement('td');
-    const subTotal = calcItemTotal(cartItem, teaItem);
-    tdSubTotal.textContent = `$${subTotal.toFixed(2)}`;
-    tableRow.append(tdSubTotal);
-   
     const updatedCart = getCart();
     const addButton = document.createElement('button');
     addButton.textContent = '+';
@@ -56,6 +36,27 @@ export function renderTableRow(cartItem, teaItem) {
         }
         
     });
+
+    const tdQuantity = document.createElement('td');
+    let quantity = cartItem.quantity;
+    tdQuantity.textContent = quantity;
+    tableRow.append(tdQuantity);
+
+    const tdName = document.createElement('td');
+    const itemName = teaItem.name;
+    tdName.textContent = itemName;
+    tableRow.append(tdName);
+    
+    const tdPrice = document.createElement('td');
+    const price = teaItem.price;
+    tdPrice.textContent = `$${price.toFixed(2)}`;
+    tableRow.append(tdPrice);
+
+    const tdSubTotal = document.createElement('td');
+    const subTotal = calcItemTotal(cartItem, teaItem);
+    tdSubTotal.textContent = `$${subTotal.toFixed(2)}`;
+    tableRow.append(tdSubTotal);
+
 
     
 

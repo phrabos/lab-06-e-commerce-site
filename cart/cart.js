@@ -25,7 +25,12 @@ function popup(msg, gfg) {
     confirmBox.show();
 }
 orderButton.addEventListener('click', () => {
-    message.textContent = 'Thank you, your order of ' + JSON.stringify(cart) + ' has been placed!';
+    let cartMessage = '';
+    for (let iterator of cart){
+        const teaObject = findByID(iterator.id, teasArray);
+        cartMessage += `${iterator.quantity} ${teaObject.name}, `;
+    }
+    message.textContent = 'Thank you, your order of ' + cartMessage + ' has been placed!';
     popup();
     clearCart();
 });
@@ -38,6 +43,7 @@ for (const iterator of cart) {
 }
 
 const tr = document.createElement('tr');
+const td5 = document.createElement('td');
 const td1 = document.createElement('td');
 const td2 = document.createElement('td');
 const td3 = document.createElement('td');
@@ -46,5 +52,5 @@ td3.textContent = 'Order Total: ';
 td3.classList.add('total');
 td4.classList.add('total', 'total-amount');
 td4.textContent = `$${orderTotal}`;
-tr.append(td1, td2, td3, td4);
+tr.append(td1, td5, td2, td3, td4);
 table.append(tr);

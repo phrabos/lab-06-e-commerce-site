@@ -31,7 +31,14 @@ td {
     border-top: 1px solid black;
 } */
 button {
+    width: 25px;
+    height: 25px;
+    margin-right: 5px;
+    font-size: 20px;
+}
+#order-button {
     height: 40px;
+    width: fit-content;
     font-size: 25px;
     margin-top: 40px;
 }
@@ -60,6 +67,8 @@ button {
     padding: 5px; 
     text-align: center; 
     width: 100%; 
+    height: fit-content;
+    font-size: 30px;
  } 
    
  /* Dialog box message decorating */
