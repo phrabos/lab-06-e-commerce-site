@@ -21,11 +21,6 @@ export function renderAdminProducts(tea){
     img.classList.add('tea-image');
     li.append(img);
     
-    const pPrice = document.createElement('p');
-    pPrice.classList.add('tea-price');
-    pPrice.textContent = `$${tea.price.toFixed(2)}`;
-    li.append(pPrice);
-    
     const button = document.createElement('button');
     button.textContent = 'Remove';
     button.value = tea.id;
@@ -35,7 +30,7 @@ export function renderAdminProducts(tea){
     button.addEventListener('click', () => {
         
         removeFromProductsList(tea, updatedProductsArray);
-        window.location.reload();
+        // window.location.reload();
         
     });
 

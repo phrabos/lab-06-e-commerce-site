@@ -41,6 +41,5 @@ export function removeFromProductsList(item, arrayOfProducts){
     const indexToDelete = arrayOfProducts.indexOf(arrayItem);
     arrayOfProducts.splice(indexToDelete, 1);
     setProducts(arrayOfProducts);
-    return arrayOfProducts;
 
 }
