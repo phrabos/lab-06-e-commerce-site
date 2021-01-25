@@ -1,0 +1,77 @@
+main {
+    display: flex;
+    flex-direction: row;
+}
+.main-section {
+    width: 500px;
+}
+h1 {
+    font-size: 2rem;
+    font-weight: bold;
+}
+h2 {
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+.form-div {
+    height: 400px;
+}
+.form {
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+h3 {
+    font-size: .8rem;
+    font-weight: bold;
+    height: 40px;
+}
+#oolong-list {
+    /* margin-top: 75px; */
+    gap: 5px;
+    margin-bottom: 5px;
+    justify-content: center;
+    width: 500px;
+}
+
+ul {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+.tea-category {
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+.tea-item {
+    width: 100px;
+    border: solid 1px black;
+    text-align: center;
+}
+.tea-description {
+    overflow-wrap: break-word;
+}
+.tea-price {
+    font-weight: 900;
+}
+.tea-image {
+    width: 98px;
+    height: 98px;
+}
+button {
+    margin-top: 5px;
+    height: 35px;
+    width: 100%;
+    font-size: 20px;
+    background-color: black;
+    color: white;
+}
+#cart-count {
+    font-size: 25px;
+    color: tomato;
+    font-weight: bold;
+}
+select {
+    height: 30px;
+}

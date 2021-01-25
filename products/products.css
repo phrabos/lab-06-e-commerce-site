@@ -1,0 +1,72 @@
+main {
+    background-size: cover;
+    background-image: url(../assets/farm.jpg);
+}
+.main-section {
+    background-color: #ffffffbf;
+    width: 100%;
+    max-width: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+h1 {
+    font-size: 2rem;
+    font-weight: bold;
+}
+h2 {
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+h3 {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+#oolong-list {
+    margin-top: 75px;
+    gap: 5px;
+    margin-bottom: 5px;
+    justify-content: center;
+}
+
+ul {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+.tea-category {
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+.tea-item {
+    width: 275px;
+    border: solid 1px black;
+    text-align: center;
+}
+.tea-description {
+    overflow-wrap: break-word;
+}
+.tea-price {
+    font-weight: 900;
+}
+.tea-image {
+    width: 100px;
+    height: 100px;
+}
+button {
+    margin-top: 5px;
+    height: 35px;
+    width: 100%;
+    font-size: 20px;
+    background-color: black;
+    color: white;
+}
+#cart-count {
+    font-size: 25px;
+    color: tomato;
+    font-weight: bold;
+}
+select {
+    height: 30px;
+}

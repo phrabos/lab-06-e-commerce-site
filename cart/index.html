@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles/reset.css">
+    <link rel="stylesheet" href="../styles/style.css">
+    <link rel="stylesheet" href="./cart.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+    </script> 
+    <title>Cart: Tea Shop</title>
+</head>
+
+<body>
+    <header>
+        <div class="header-logo">
+            <div>
+                <img src="../assets/logo.jpg"/>
+                <h1>
+                A Tea Shop
+                </h1>
+            </div>
+        </div>
+        <nav>
+            <a href='../index.html' target='_self'>Home</a>
+            <a href='../products/index.html' target='_self'>Products</a>
+            <a href='./index.html' target='_self'>Cart</a>
+            <a id='admin' href='../admin/index.html' target='_self'>Admin</a>
+        </nav>
+    </header>
+    <main>
+        <section class="main-section">
+            <h2>
+                <p>
+                    This is the shopping cart. 
+                </p>
+            </h2>
+            <div id="container"> 
+                <div id='message' class="message"> 
+                   
+                </div> 
+                <button class="yes">okay</button> 
+             </div> 
+            <table id='cart-table'>
+                <tr>
+                    <th></th>    
+                    <th>Quantity</th>    
+                    <th>Item</th>    
+                    <th>Item Price</th>    
+                    <th>Sub-total</th>    
+                </tr>
+            </table>
+            <button id='order-button'>Place Order</button> 
+        </section>
+    </main>
+        <footer>
+            <div class="copy gutter-right">&copy; 2020 Alchemy Code Lab</div>
+        </footer>
+        
+        <script type="module" src="./cart.js"></script>
+</body>
+    
+    </html>
