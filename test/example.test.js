@@ -105,7 +105,7 @@ test('should take in a cart item and a tea item and return total price', (expect
 test('should take in a cart item and a teaArrays item and return a table row element', (expect) => {
     //Arrange
     // Set up your arguments and expectations
-    const expected = `<tr><td>3</td><td>Bingdao</td><td>$40.00</td><td>$120.00</td><button>+</button><button>-</button></tr>`;
+    const expected = `<tr><button>+</button><button>-</button><td>3</td><td>Bingdao</td><td>$40.00</td><td>$120.00</td></tr>`;
     
     //Act 
     // Call the function you're testing and set the result to a const
